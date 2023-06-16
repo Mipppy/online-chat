@@ -1,8 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
 .messages {
     list-style: none;
     font-size: 23px;
+    font-family: 'EB Garamond', serif;
 }
 body {
     background-color: #6a93cb;
     background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
 }
+.chat-input {
+    border-radius: 50px;
+    background: linear-gradient(to top, #0f3c76 0%, #537895 100%);
+    border-style: double;
+    border-width: 1px;
+    border-color: #0f3c76;
+    color: rgba(197, 197, 197, 1);
+    width: 85%;
+    height: 35px;
+    font-size: 25px;
+    margin-left: 37px;
+}
+.chat-input:focus {
+    border-color: black;
+    border-width: 2px;
+    outline: none;
+}
+.msgdiv {
+    background-color: transparent;
+    top: 85%;
+    position: absolute;
+    height: 50px;
+    width: 88%;
+    align-content: left;
+}
+.all-messages {
+    width: 75%;
+    background-color: rgba(21, 21, 67, 0.46);
+    margin-left: 50px;
+    max-height: 480px;
+    overflow: auto;
+}
+/* .send-message {
+
+} */
