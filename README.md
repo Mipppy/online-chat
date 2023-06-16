@@ -1,4 +1,4 @@
-#Node.js server with basic online chatting and username system.
+# Node.js server with basic online chatting and username system.
 
 **Ignore the LICENSE file, I don't know or care what it does, but as long as it protects people from directly using my code and publishing it as their own.**
 
