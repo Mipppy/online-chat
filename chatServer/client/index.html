@@ -1,0 +1,77 @@
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form id="chat-form">
+      <input id="chat-input" autocomplete="off" />
+      <button>Send</button>
+    </form>
+    <script>
+      //vars
+      const socket = io();
+      const form = $('#chat-form');
+      const input = $('#chat-input');
+      const messages = $('#messages');
+
+      form.submit((e) => {
+        e.preventDefault();
+        if (input.val()) { //Sumbitting message
+          socket.emit('chat message', d + ': ' + input.val());
+          input.val('');
+        }
+      });
+
+      socket.on('chat message', (msg) => {
+        if (msg == "null connected!" || msg =="null disconnected!") {
+          console.log("null cannot be entered!") //more null errors
+        }
+        else if(d == null) {
+          d = prompt("Enter a username for this session...") //Dealing with null exceptions
+        }
+        else {
+        messages.append($('<li>').text(msg)); //adding message
+        }
+       });
+      socket.on('connectmsg', (space) => {
+        d = prompt("Enter a username for this session...") //Getting username asap and emitting fake chat message to show connect/disconnect
+        socket.emit('chat message', d + " connected!")
+      })
+      socket.on('disconnectmsg', (space) => {
+        socket.emit('chat message', d + ' disconnected!') //Same deal without username part
+      })
+    </script>
+  </body>
+</html>
+
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <ul id="messages" class="messages"></ul>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" autocomplete="off" class="chat-input"/>
+      <button class="send-message">Send</button>
+    </form>
+    <script src="../client.js"></script>
+  </body>
+</html>
+
+
+
